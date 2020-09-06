@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/address', 'AddressController@index')->name('index-addresses');
+Route::post('/address', 'AddressController@create')->name('add-address');
+Route::delete('/address/{id}', 'AddressController@delete')->name('delete-address');

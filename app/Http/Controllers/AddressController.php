@@ -32,6 +32,7 @@ class AddressController extends Controller
             ->join('addresses', 'addresses.id', '=', 'user_address.address_id')
             ->join('users', 'users.id', '=', 'user_address.user_id')
             ->orderBy('addresses.name','ASC')
+            ->select('addresses.name as name', 'users.name as user_name', 'addresses.city', 'addresses.area', 'addresses.street', 'addresses.house', 'addresses.id', 'addresses.additional_information')
             ->get();
         $addresses = json_decode($addresses, true);
         return view('address', [

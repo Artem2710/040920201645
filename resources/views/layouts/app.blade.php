@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
 
 </head>
@@ -32,26 +33,34 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <div class="logo_box">
+                            <img src="{{ asset('img/logo.png') }}" alt="foodclub" />
+                        </div>
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
+
+                    <ul class="nav navbar-nav custom_nav">
+                        &nbsp;@guest
+
+                        @else
+                            <a class="midbox nftoggle" href="#"><img src="{{ asset('imgc/user_ava_1_40.jpg') }}" alt=""></a>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li class="white-style"><a href="{{ route('login') }}">Login</a></li>
+                            <li class="white-style"><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{--{{ Auth::user()->name }} --}}
+                                    <span class="caret custom-caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">

@@ -1,0 +1,31 @@
+.navbar-static-top{
+    height: 87px;
+    position: relative;
+    z-index: 500;
+    font-size: 12px;
+    background: url(../img/page_orange_bg.jpg) #9a1b0a center top no-repeat;
+}
+.logo_box{
+    float: left;
+    margin: 10px 0 0 0;
+}
+.midbox{
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+.midbox>img{
+    margin-top: 20px;
+
+}
+.custom_nav{
+    width: 77%;
+}
+.custom-caret{
+    color: #fff;
+    margin-right: 37px;
+    margin-top: 25px;
+}
+.white-style>a{
+    color: #fff !important;
+}
